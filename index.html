@@ -8,61 +8,61 @@
 </head>
 <body>
     <script>
-        // Класс Человека (Людина)
-        class Человек {
-            constructor(имя, пол) {
-                this.имя = имя;
-                this.пол = пол;
+        // Human class
+        class Human {
+            constructor(name, gender) {
+                this.name = name;
+                this.gender = gender;
             }
         }
 
-        // Класс Квартиры
-        class Квартира {
+        // Apartment class
+        class Apartment {
             constructor() {
-                this.жители = [];
+                this.residents = [];
             }
 
-            добавитьЖителя(человек) {
-                this.жители.push(человек);
+            addResident(person) {
+                this.residents.push(person);
             }
         }
 
-        // Класс Дома
-        class Дом {
-            constructor(максКоличествоКвартир) {
-                this.квартиры = [];
-                this.максКоличествоКвартир = максКоличествоКвартир;
+        // House class
+        class House {
+            constructor(maxApartments) {
+                this.apartments = [];
+                this.maxApartments = maxApartments;
             }
 
-            добавитьКвартиру(квартира) {
-                if (this.квартиры.length < this.максКоличествоКвартир) {
-                this.квартиры.push(квартира);
+            addApartment(apartment) {
+                if (this.apartments.length < this.maxApartments) {
+                    this.apartments.push(apartment);
                 } else {
-                console.log('Достигнуто максимальное количество квартир в доме.');
+                    console.log('Maximum number of apartments reached in the house.');
                 }
             }
         }
 
-        // Создание класса Человек
-        const человек1 = new Человек('Анна', 'женский');
-        const человек2 = new Человек('Петро', 'мужской');
+        // Creating a Human object
+        const person1 = new Human('Anna', 'female');
+        const person2 = new Human('Peter', 'male');
 
-        // Создание класса Квартира
-        const квартира1 = new Квартира();
-        const квартира2 = new Квартира();
+        // Creating an Apartment object
+        const apartment1 = new Apartment();
+        const apartment2 = new Apartment();
 
-        // Добавление людей в квартиры
-        квартира1.добавитьЖителя(человек1);
-        квартира2.добавитьЖителя(человек2);
+        // Adding people to apartments
+        apartment1.addResident(person1);
+        apartment2.addResident(person2);
 
-        // Создание класса Дом
-        const дом = new Дом(3); 
+        // Creating a House object
+        const house = new House(3);
 
-        // Добавление квартир в дом
-        дом.добавитьКвартиру(квартира1);
-        дом.добавитьКвартиру(квартира2);
+        // Adding apartments to the house
+        house.addApartment(apartment1);
+        house.addApartment(apartment2);
 
-        console.log(дом);
+        console.log(house);
     </script>
 </body>
-</html> 
+</html>
